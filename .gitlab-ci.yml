@@ -4,10 +4,10 @@ before_script:
   - yarn
 
 test:
-script:
-  - yarn run test:int
-  - yarn run test:unit
-  - yarn run test:screen
+  script:
+    - yarn run test:int
+    - yarn run test:unit
+    - yarn run test:screen
 
 build:
   only:
