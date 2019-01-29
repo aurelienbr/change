@@ -14,5 +14,6 @@ build:
     - master
     - release
     - hotfix
+    - develop
   script:
     - yarn run test:func
