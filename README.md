@@ -1,6 +1,6 @@
 # Projet sparta-mobile
 
-Boilerplate pour React Native avec Expo
+Boilerplate pour React Native sans Expo
 
 ### Démarrer l'application sur son mobile
 
@@ -8,17 +8,16 @@ Boilerplate pour React Native avec Expo
   Sachant qu'on utilise GitFlow, la branche à récupérer est "develop" :
 - Installer flow en global (npm i -g flow-bin@^0.89.0)
 - git checkout develop && yarn (attention à développer sur ses propres branches feature/x)
-- yarn start. En cas de problème avec l'ip, éxécuter set REACT_NATIVE_PACKAGER_HOSTNAME="IP"
+- react-native run-android ou react-native run-ios
 
 ### Fonctionnalitées
 
-- Projet créé avec CRNA / Expo
+- Projet créé avec CRNA sans expo
 - Utilisation de redux-saga et redux-persist
 - Typage fort avec Flow
 - Verification du code avec eslint (semistandard/flow/react/react-native) + prettier
 - Components de base gérés avec react-native-elements
 - Routing avec react-navigation
-- Loading avec
 - Bonne structure et pratiques
 - Tests avec Jest
 - Intégré à la Pipeline Gitlab
@@ -46,5 +45,7 @@ Il est conseillé d'utiliser Atom avec au minimum les packages :
 - autocomplete
 - atom-ternjs
 - atom-react-autocomplete
+- autocomplete-Flow
+- ide-flowtype
 
 A voir si d'autre packages peuvent être utile.

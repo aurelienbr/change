@@ -3,15 +3,16 @@ image: node:8.11.4
 before_script:
   - yarn
 
+test:
+script:
+  - yarn run test:int
+  - yarn run test:unit
+  - yarn run test:screen
+
 build:
   only:
     - master
     - release
     - hotfix
   script:
-    - yarn run build:android
-
-test:
-  script:
-    - yarn run lint
-    - yarn run flow
+    - yarn run test:func
