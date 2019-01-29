@@ -1,0 +1,51 @@
+{
+  "root": true,
+  "parser": "babel-eslint",
+  "extends": [
+    "semistandard",
+    "react-native",
+    "plugin:flowtype/recommended",
+    "plugin:react/recommended",
+    "prettier",
+    "prettier/flowtype",
+    "prettier/standard",
+    "plugin:jest/recommended"
+  ],
+  "plugins": [
+    "flowtype",
+    "react",
+    "react-native",
+    "prettier",
+    "standard",
+    "jest"
+  ],
+  "rules": {
+    "no-use-before-define": "off",
+    "import/no-namespace": "off",
+    "no-duplicate-imports": "off",
+    "react/prefer-stateless-function": [
+      "error",
+      { "ignorePureComponents": true }
+    ],
+    "import/no-nodejs-modules": "off",
+    "no-invalid-this": "off",
+    "prettier/prettier": ["error", { "singleQuote": true, "printWidth": 150 }],
+    "max-len": ["error", { "code": 150 }]
+  },
+  "env": {
+    "es6": true,
+    "node": true,
+    "jest/globals": true,
+    "jest": true
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"]
+      }
+    },
+    "flowtype": {
+      "onlyFilesWithFlowAnnotation": true
+    }
+  }
+}

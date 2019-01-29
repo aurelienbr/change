@@ -1,0 +1,4 @@
+// @flow
+import { STATUS_START, STATUS_LOADING, STATUS_FAILURE, STATUS_SUCCESS } from 'constants/statusConstants';
+
+export type Status = STATUS_START | STATUS_LOADING | STATUS_FAILURE | STATUS_SUCCESS;

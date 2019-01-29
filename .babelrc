@@ -1,0 +1,12 @@
+{
+  "env": {
+    "production": {
+      "presets": ["module:metro-react-native-babel-preset"],
+      "plugins": ["@babel/plugin-transform-flow-strip-types", "@babel/plugin-proposal-class-properties", "babel-plugin-root-import"]
+    },
+    "development": {
+      "presets": ["module:metro-react-native-babel-preset"],
+      "plugins": ["@babel/plugin-transform-flow-strip-types", "@babel/plugin-proposal-class-properties", "babel-plugin-root-import"]
+    }
+  }
+}

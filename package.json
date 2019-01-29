@@ -1,0 +1,95 @@
+{
+  "name": "reactNativeOsBoilerplate",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "test:screen": "node ./node_modules/jest/bin/jest.js --testPathPattern=screen\\.test\\.js$ --coverage",
+    "test:unit": "node ./node_modules/jest/bin/jest.js --testPathPattern=unit\\.test\\.js$",
+    "test:int": "node ./node_modules/jest/bin/jest.js --testPathPattern=int\\.test\\.js$",
+    "test:func": "jest --testPathPattern=func\\.test\\.js$ --coverage",
+    "precommit": "lint-staged && npm run flow",
+    "lint": "eslint src/**/*.js",
+    "flow": "flow"
+  },
+  "rnpm": {
+    "assets": [
+      "src/assets/fonts/Montserrat-Bold",
+      "src/assets/fonts/Montserrat-Light",
+      "src/assets/fonts/Montserrat-Regular",
+      "src/assets/fonts/SpaceMono-Regular"
+    ]
+  },
+  "jest": {
+    "preset": "react-native"
+  },
+  "lint-staged": {
+    "linters": {
+      "*.js": [
+        "eslint src/**/*.js"
+      ]
+    },
+    "ignore": [
+      "**/flow-typed/**/*.js"
+    ]
+  },
+  "dependencies": {
+    "@babel/plugin-transform-flow-strip-types": "^7.2.3",
+    "@feathersjs/authentication-client": "^1.0.9",
+    "@feathersjs/feathers": "^3.3.0",
+    "@feathersjs/rest-client": "^1.4.6",
+    "axios": "^0.18.0",
+    "intl": "^1.2.5",
+    "react": "16.6.3",
+    "react-intl": "^2.7.2",
+    "react-native": "0.58.1",
+    "react-native-elements": "1.0.0",
+    "react-native-gesture-handler": "^1.0.15",
+    "react-native-vector-icons": "^6.2.0",
+    "react-navigation": "^3.0.9",
+    "react-redux": "^6.0.0",
+    "redux": "^4.0.1",
+    "redux-persist": "^5.10.0",
+    "redux-saga": "^0.16.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.2.3",
+    "@babel/plugin-transform-react-jsx-source": "^7.2.0",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "babel-plugin-root-import": "^6.1.0",
+    "babel-polyfill": "^6.26.0",
+    "enzyme-adapter-react-16": "^1.7.1",
+    "eslint": "^5.10.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-config-react-native": "^4.0.0",
+    "eslint-config-semistandard": "^13.0.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-flowtype": "^3.2.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^22.1.2",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-react-native": "^3.5.0",
+    "eslint-plugin-standard": "^4.0.0",
+    "flow-bin": "^0.89.0",
+    "husky": "^1.2.1",
+    "jest": "^23.6.0",
+    "lint-staged": "^8.1.0",
+    "metro-react-native-babel-preset": "0.51.1",
+    "nock": "^10.0.4",
+    "prettier": "^1.15.3",
+    "prettier-eslint": "^8.8.2",
+    "react-test-renderer": "^16.6.3",
+    "redux-test-utils": "^0.3.0",
+    "regenerator-runtime": "^0.13.1",
+    "remote-redux-devtools": "0.5.0"
+  }
+}

@@ -1,0 +1,17 @@
+image: node:8.11.4
+
+before_script:
+  - yarn
+
+build:
+  only:
+    - master
+    - release
+    - hotfix
+  script:
+    - yarn run build:android
+
+test:
+  script:
+    - yarn run lint
+    - yarn run flow
