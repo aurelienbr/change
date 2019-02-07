@@ -4,7 +4,6 @@ import { STATUS_START, STATUS_LOADING, STATUS_FAILURE, STATUS_SUCCESS } from 'co
 import { REGISTER_START, REGISTER_FAILURE, REGISTER_SUCCESS } from 'actions/registerActions';
 
 import type { Status } from 'types/Status';
-import type { ActionType } from 'types/Actions';
 
 export type State = {
   status: Status,
@@ -16,7 +15,7 @@ const initialState: State = {
   error: null
 };
 
-export default function(state: State = initialState, action: ActionType): State {
+export default function(state: State = initialState, action: any): State {
   switch (action.type) {
     case REGISTER_START:
       return {

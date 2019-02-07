@@ -5,7 +5,6 @@ import { LOGIN_START, LOGIN_TOKEN_START, LOGIN_SUCCESS, LOGIN_FAILURE, LOGIN_RES
 
 import type { UserType } from 'types/User';
 import type { Status } from 'types/Status';
-import type { ActionType } from 'types/Actions';
 
 export type State = {
   user: UserType,
@@ -23,7 +22,7 @@ const initialState: State = {
   status: STATUS_START
 };
 
-export default function(state: State = initialState, action: ActionType): State {
+export default function(state: State = initialState, action: any): State {
   switch (action.type) {
     case LOGIN_START:
       return {
