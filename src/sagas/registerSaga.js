@@ -5,13 +5,12 @@ import { REGISTER_START, userRegisterSuccess, userRegisterFailed } from 'actions
 import * as sessionService from 'services/authentication/authenticationService';
 import type { Saga } from 'redux-saga';
 import type { GeneratorType } from 'sagas/root';
-import type { REGISTER_START_ACTION } from 'actions/registerActions';
 
 export default function* registerSaga(): GeneratorType {
   yield takeLatest(REGISTER_START, registerUser);
 }
 
-function* registerUser(action: REGISTER_START_ACTION): Saga<void> {
+function* registerUser(action): Saga<void> {
   const { email, password } = action.payload;
   try {
     yield call(sessionService.registerUser, email, password);

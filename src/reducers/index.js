@@ -1,7 +1,8 @@
 // @flow
-import { combineReducers } from 'redux';
+import { type Reducer, combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import type { StateType, ActionType } from 'types/Actions';
 
 import locale from 'reducers/localeReducer';
 import login from 'reducers/loginReducer';
@@ -13,8 +14,12 @@ const loginPersistConfig = {
   whitelist: ['token']
 };
 
-export default combineReducers({
+const persistedLogin: any = persistReducer(loginPersistConfig, login);
+
+const combinedReducers: Reducer<StateType, ActionType> = combineReducers({
   locale,
-  login: persistReducer(loginPersistConfig, login),
+  login: persistedLogin,
   register
 });
+
+export default combinedReducers;

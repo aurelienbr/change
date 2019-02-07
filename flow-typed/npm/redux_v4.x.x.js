@@ -2,7 +2,6 @@
 // flow-typed version: c4c8963c9c/redux_v4.x.x/flow_>=v0.55.x
 
 declare module 'redux' {
-
   /*
 
     S = State
@@ -15,29 +14,27 @@ declare module 'redux' {
   declare export type Dispatch<A: { type: $Subtype<string> }> = DispatchAPI<A>;
 
   declare export type MiddlewareAPI<S, A, D = Dispatch<A>> = {
-    dispatch: D;
-    getState(): S;
+    dispatch: D,
+    getState(): S
   };
 
   declare export type Store<S, A, D = Dispatch<A>> = {
     // rewrite MiddlewareAPI members in order to get nicer error messages (intersections produce long messages)
-    dispatch: D;
-    getState(): S;
-    subscribe(listener: () => void): () => void;
+    dispatch: D,
+    getState(): S,
+    subscribe(listener: () => void): () => void,
     replaceReducer(nextReducer: Reducer<S, A>): void
   };
 
   declare export type Reducer<S, A> = (state: S | void, action: A) => S;
 
-  declare export type CombinedReducer<S, A> = (state: $Shape<S> & {} | void, action: A) => S;
+  declare export type CombinedReducer<S, A> = (state: ($Shape<S> & {}) | void, action: A) => S;
 
-  declare export type Middleware<S, A, D = Dispatch<A>> =
-    (api: MiddlewareAPI<S, A, D>) =>
-      (next: D) => D;
+  declare export type Middleware<S, A, D = Dispatch<A>> = (api: MiddlewareAPI<S, A, D>) => (next: D) => D;
 
   declare export type StoreCreator<S, A, D = Dispatch<A>> = {
-    (reducer: Reducer<S, A>, enhancer?: StoreEnhancer<S, A, D>): Store<S, A, D>;
-    (reducer: Reducer<S, A>, preloadedState: S, enhancer?: StoreEnhancer<S, A, D>): Store<S, A, D>;
+    (reducer: Reducer<S, A>, enhancer?: StoreEnhancer<S, A, D>): Store<S, A, D>,
+    (reducer: Reducer<S, A>, preloadedState: S, enhancer?: StoreEnhancer<S, A, D>): Store<S, A, D>
   };
 
   declare export type StoreEnhancer<S, A, D = Dispatch<A>> = (next: StoreCreator<S, A, D>) => StoreCreator<S, A, D>;
