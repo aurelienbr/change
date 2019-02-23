@@ -11,22 +11,12 @@
     "prettier/standard",
     "plugin:jest/recommended"
   ],
-  "plugins": [
-    "flowtype",
-    "react",
-    "react-native",
-    "prettier",
-    "standard",
-    "jest"
-  ],
+  "plugins": ["flowtype", "react", "react-native", "prettier", "standard", "jest"],
   "rules": {
     "no-use-before-define": "off",
     "import/no-namespace": "off",
     "no-duplicate-imports": "off",
-    "react/prefer-stateless-function": [
-      "error",
-      { "ignorePureComponents": true }
-    ],
+    "react/prefer-stateless-function": ["error", { "ignorePureComponents": true }],
     "import/no-nodejs-modules": "off",
     "no-invalid-this": "off",
     "prettier/prettier": ["error", { "singleQuote": true, "printWidth": 150 }],
@@ -40,9 +30,7 @@
   },
   "settings": {
     "import/resolver": {
-      "node": {
-        "paths": ["src"]
-      }
+      "babel-module": {}
     },
     "flowtype": {
       "onlyFilesWithFlowAnnotation": true

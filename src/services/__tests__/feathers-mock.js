@@ -1,7 +1,7 @@
 // @flow
 
-import { API_URL } from 'constants/apiConstants';
 import nock from 'nock';
+import { API_URL } from '~constants/apiConstants';
 
 class Mock {
   nock = nock;

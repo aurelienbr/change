@@ -1,6 +1,6 @@
 // @flow
 
-import { LOCALE_SET_LANGUAGE } from 'actions/localeActions';
+import { LOCALE_SET_LANGUAGE } from '~actions/localeActions';
 
 export type State = {
   language: string

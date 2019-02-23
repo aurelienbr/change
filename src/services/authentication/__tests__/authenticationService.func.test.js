@@ -1,6 +1,6 @@
 //@flow
-import { loginUser, refreshToken, registerUser } from 'services/authentication/authenticationService';
-import * as mockData from 'services/__tests__/mock-data';
+import * as mockData from '~services/__tests__/mock-data';
+import { loginUser, refreshToken, registerUser } from '~services/authentication/authenticationService';
 
 describe('sessionService', () => {
   describe('loginUser', () => {

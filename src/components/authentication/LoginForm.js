@@ -3,13 +3,11 @@ import React, { Fragment, PureComponent } from 'react';
 import { Text, View, ActivityIndicator } from 'react-native';
 import { Input, Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons';
-import styles from 'assets/styles/components/authentication/LoginForm.style';
-import { validateEmail } from 'utils/validatorUtils';
 import { withNavigation } from 'react-navigation';
-import { WHITE } from 'constants/colorConstants';
-
-import { STATUS_LOADING, STATUS_SUCCESS } from 'constants/statusConstants';
-import type { Status } from 'types/Status';
+import { WHITE } from '~constants/colorConstants';
+import { STATUS_LOADING, STATUS_SUCCESS, type Status } from '~types/Status';
+import { validateEmail } from '~utils/validatorUtils';
+import styles from '~styles/components/authentication/LoginForm.style';
 
 export type StateProps = {
   status: Status,

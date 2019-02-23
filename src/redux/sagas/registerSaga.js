@@ -1,10 +1,10 @@
 // @flow
 
 import { takeLatest, put, call } from 'redux-saga/effects';
-import { REGISTER_START, userRegisterSuccess, userRegisterFailed } from 'actions/registerActions';
-import * as sessionService from 'services/authentication/authenticationService';
 import type { Saga } from 'redux-saga';
-import type { GeneratorType } from 'sagas/root';
+import * as sessionService from '~services/authentication/authenticationService';
+import { REGISTER_START, userRegisterSuccess, userRegisterFailed } from '~actions/registerActions';
+import type { GeneratorType } from '~types/Saga';
 
 export default function* registerSaga(): GeneratorType {
   yield takeLatest(REGISTER_START, registerUser);

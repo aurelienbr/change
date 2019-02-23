@@ -2,11 +2,11 @@
 import { type Reducer, combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import type { StateType, ActionType } from 'types/Actions';
 
-import locale from 'reducers/localeReducer';
-import login from 'reducers/loginReducer';
-import register from 'reducers/registerReducer';
+import locale from '~reducers/localeReducer';
+import login from '~reducers/loginReducer';
+import register from '~reducers/registerReducer';
+import type { StateType, ActionType } from '~types/Actions';
 
 const loginPersistConfig = {
   key: 'login',

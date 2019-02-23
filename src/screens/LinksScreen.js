@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
-import { WHITE } from 'constants/colorConstants';
+import { WHITE } from '~constants/colorConstants';
 
 export default class LinksScreen extends React.Component {
   static navigationOptions = {

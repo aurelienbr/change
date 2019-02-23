@@ -1,20 +1,12 @@
 // @flow
 
-import type { UserType } from 'types/User';
+import type { UserType } from '~types/User';
 
 export const LOGIN_START = 'LOGIN_START';
 export const LOGIN_TOKEN_START = 'LOGIN_TOKEN_START';
 export const LOGIN_FAILURE = 'LOGIN_FAILURE';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_RESET = 'LOGIN_RESET';
-
-export type LOGIN_START_ACTION = {
-  type: 'LOGIN_START',
-  payload: {
-    email: string,
-    password: string
-  }
-};
 
 export function loginUser(email: string, password: string) {
   return {

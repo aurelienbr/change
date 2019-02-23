@@ -1,11 +1,11 @@
 // @flow
 import { connect } from 'react-redux';
 
-import LoginForm from 'components/authentication/LoginForm';
-import { loginUser, loginUserWithToken } from 'actions/loginActions';
+import LoginForm from '~components/authentication/LoginForm';
+import { loginUser, loginUserWithToken } from '~actions/loginActions';
 
-import type { DispatchType, StateType } from 'types/Actions';
-import type { StateProps, DispatchProps } from 'components/authentication/LoginForm';
+import type { DispatchType, StateType } from '~types/Actions';
+import type { StateProps, DispatchProps } from '~components/authentication/LoginForm';
 // import { setLanguage } from 'actions/localeActions';
 
 export default connect(

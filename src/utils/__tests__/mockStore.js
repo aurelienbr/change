@@ -1,8 +1,9 @@
 // @flow
 import React from 'react';
 import { createMockStore } from 'redux-test-utils';
-import { STATUS_START } from 'constants/statusConstants';
 import { Provider } from 'react-redux';
+
+import { STATUS_START } from '~types/Status';
 
 const store = createMockStore({
   login: {

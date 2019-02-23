@@ -1,10 +1,10 @@
 // @flow
 import React, { PureComponent } from 'react';
 import { View, ImageBackground, KeyboardAvoidingView, ScrollView } from 'react-native';
-import BG_IMAGE from 'assets/images/background2.jpg';
-import styles from 'assets/styles/screens/LoginScreen.style';
-import LoginFormContainer from 'containers/authentication/LoginFormContainer';
-import RegisterForm from 'components/authentication/RegisterForm';
+import BG_IMAGE from '~images/background2.jpg';
+import styles from '~styles/screens/LoginScreen.style';
+import LoginFormContainer from '~containers/authentication/LoginFormContainer';
+import RegisterForm from '~components/authentication/RegisterForm';
 
 type Props = {};
 type State = {
