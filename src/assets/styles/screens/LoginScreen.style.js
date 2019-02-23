@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { SCREEN_WIDTH, SCREEN_HEIGHT } from 'constants/sizeConstants';
+import { SCREEN_WIDTH, SCREEN_HEIGHT } from '~constants/sizeConstants';
 
 export default StyleSheet.create({
   container: {

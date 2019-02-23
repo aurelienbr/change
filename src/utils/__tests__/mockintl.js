@@ -1,8 +1,7 @@
 // @flow
-import React from 'react';
-
 import { IntlProvider } from 'react-intl';
-import messages from 'lang/en.json';
+import React from 'react';
+import messages from '~lang/en.json';
 
 const locale = 'en';
 

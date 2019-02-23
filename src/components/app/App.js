@@ -2,8 +2,8 @@
 import 'intl';
 import React, { PureComponent } from 'react';
 import { IntlProvider } from 'react-intl';
-import messages from 'lang/index';
-import AppNavigator from 'navigation/AppNavigator';
+import messages from '~lang/index';
+import AppNavigator from '~navigation/AppNavigator';
 
 export type StateProps = {
   language: string

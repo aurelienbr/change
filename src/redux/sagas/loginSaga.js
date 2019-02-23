@@ -1,10 +1,10 @@
 // @flow
 
 import { takeLatest, put, call } from 'redux-saga/effects';
-import { LOGIN_START, LOGIN_TOKEN_START, userLoginSuccess, userLoginFailed } from 'actions/loginActions';
-import * as sessionService from 'services/authentication/authenticationService';
 import type { Saga } from 'redux-saga';
-import type { GeneratorType } from 'sagas/root';
+import type { GeneratorType } from '~types/Saga';
+import { LOGIN_START, LOGIN_TOKEN_START, userLoginSuccess, userLoginFailed } from '~actions/loginActions';
+import * as sessionService from '~services/authentication/authenticationService';
 // import { SubmissionError } from 'redux-form';
 
 export default function* loginSaga(): GeneratorType {

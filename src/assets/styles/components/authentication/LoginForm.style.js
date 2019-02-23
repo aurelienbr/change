@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { WHITE, GREY } from 'constants/colorConstants';
+import { WHITE, GREY } from '~constants/colorConstants';
 
 export default StyleSheet.create({
   loginTitle: {

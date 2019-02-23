@@ -1,10 +1,10 @@
 import { addLocaleData } from 'react-intl';
 
 import localeEn from 'react-intl/locale-data/en';
-import en from 'lang/en.json';
+import en from '~lang/en.json';
 
 import localeFr from 'react-intl/locale-data/fr';
-import fr from 'lang/fr.json';
+import fr from '~lang/fr.json';
 
 addLocaleData([...localeEn, ...localeFr]);
 

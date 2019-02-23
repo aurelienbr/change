@@ -1,5 +1,5 @@
 //@flow
-import { handleLoginError } from 'services/authentication/authenticationHelper';
+import { handleLoginError } from '~services/authentication/authenticationHelper';
 
 describe('authenticationHelper', () => {
   describe('handleLoginError', () => {

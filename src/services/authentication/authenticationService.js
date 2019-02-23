@@ -1,6 +1,6 @@
 // @flow
-import api, { users as UserService } from 'services/api';
-import { handleLoginError } from 'services/authentication/authenticationHelper';
+import api, { users as UserService } from '~services/api';
+import { handleLoginError } from '~services/authentication/authenticationHelper';
 
 export function loginUser(email: string, password: string): Promise<*> {
   return api

@@ -1,5 +1,5 @@
 //@flow
-import { validateEmail } from 'utils/validatorUtils';
+import { validateEmail } from '~utils/validatorUtils';
 
 describe('validatorUtils', () => {
   describe('validateEmail', () => {

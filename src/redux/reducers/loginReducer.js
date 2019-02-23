@@ -1,10 +1,9 @@
 // @flow
 
-import { STATUS_START, STATUS_LOADING, STATUS_FAILURE, STATUS_SUCCESS } from 'constants/statusConstants';
-import { LOGIN_START, LOGIN_TOKEN_START, LOGIN_SUCCESS, LOGIN_FAILURE, LOGIN_RESET } from 'actions/loginActions';
+import { LOGIN_START, LOGIN_TOKEN_START, LOGIN_SUCCESS, LOGIN_FAILURE, LOGIN_RESET } from '~actions/loginActions';
 
-import type { UserType } from 'types/User';
-import type { Status } from 'types/Status';
+import type { UserType } from '~types/User';
+import { STATUS_START, STATUS_LOADING, STATUS_FAILURE, STATUS_SUCCESS, type Status } from '~types/Status';
 
 export type State = {
   user: UserType,

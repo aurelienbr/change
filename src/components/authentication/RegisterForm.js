@@ -3,8 +3,8 @@ import React, { Fragment, PureComponent } from 'react';
 import { Text, View } from 'react-native';
 import { Input, Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons';
-import styles from 'assets/styles/components/authentication/RegisterForm.style';
-import { validateEmail } from 'utils/validatorUtils';
+import styles from '~styles/components/authentication/RegisterForm.style';
+import { validateEmail } from '~utils/validatorUtils';
 
 type Props = {
   onNavigateLogin: () => void

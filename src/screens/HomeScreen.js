@@ -1,11 +1,11 @@
 /* eslint-disable */
 import React from 'react';
 import { Image, Platform, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import Header from 'components/Header';
 import { withNavigation } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import MonoText from 'components/StyledText';
+import Header from '~components/Header';
+import MonoText from '~components/StyledText';
 
 class HomeScreen extends React.Component {
   static navigationOptions = {

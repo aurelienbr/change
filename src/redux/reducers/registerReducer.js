@@ -1,9 +1,8 @@
 // @flow
 
-import { STATUS_START, STATUS_LOADING, STATUS_FAILURE, STATUS_SUCCESS } from 'constants/statusConstants';
-import { REGISTER_START, REGISTER_FAILURE, REGISTER_SUCCESS } from 'actions/registerActions';
+import { REGISTER_START, REGISTER_FAILURE, REGISTER_SUCCESS } from '~actions/registerActions';
 
-import type { Status } from 'types/Status';
+import { STATUS_START, STATUS_LOADING, STATUS_FAILURE, STATUS_SUCCESS, type Status } from '~types/Status';
 
 export type State = {
   status: Status,
