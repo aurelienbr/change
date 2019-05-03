@@ -6,7 +6,7 @@ test:
     - yarn run lint
     - yarn run flow
     - yarn run test
-
+    
 #detox_test:iOS:
 #  stage: test
 #  before_script:
@@ -23,17 +23,63 @@ test:
 #  tags:
 #      - xcode-9.2
 
-#detox_test:android:
-#  type: test
-#  image: jerbob92/gitlab-ci-android:latest
-#  before_script:
-#    - export GRADLE_USER_HOME=`pwd`/.gradle
-#    - mkdir -p $GRADLE_USER_HOME
-#    - chmod +x ./gradlew
-#  script:
-#    - npm i -g detox-cli
+build:android:
+  type: test
+  image: jangrewe/gitlab-ci-android:latest
+  before_script:
+    - export GRADLE_USER_HOME=`pwd`/.gradle
+    - mkdir -p $GRADLE_USER_HOME
+    - chmod +x ./android/gradlew
+#   - echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf && sysctl -p
+#    - $ANDROID_HOME/tools/bin/sdkmanager --list
+#    - $ANDROID_HOME/tools/bin/sdkmanager "platform-tools" "emulator" "system-images;android-28;google_apis;x86_64"
+#    - touch ~/.android/repositories.cfg
+#    - echo no | $ANDROID_HOME/tools/bin/avdmanager create avd --force --name testAVD --abi google_apis/x86_64 --package 'system-images;android-28;google_apis;x86_64'
+#    - $ANDROID_HOME/emulator/emulator -avd testAVD -no-window -no-audio &
+#    - apt-get update -yq && apt-get install wget
+#    - wget --quiet --output-document=android-wait-for-emulator https://raw.githubusercontent.com/travis-ci/travis-cookbooks/0f497eb71291b52a703143c5cd63a217c8766dc9/community-cookbooks/android-sdk/files/default/android-wait-for-emulator
+#    - chmod +x android-wait-for-emulator
+#    - ./android-wait-for-emulator
+  script:
+    - apt-get update -yq && apt-get install curl gnupg -yq && curl -sL https://deb.nodesource.com/setup_10.x | bash && apt-get install nodejs -yq
+    - node -v
+    - npm i -g detox-cli yarn
+    - yarn
 #    - nohup npm run start &
-#    - ./detox_node/bin/react-native start --port 2137 &
+    - detox build -c android.ci.debug
+#    - detox test -c android.ci.debug || true
+    - mkdir public
+    - mv ./android/app/build/outputs/apk/debug/app-debug.apk ./public/app-debug.apk
+  artifacts:
+    paths:
+      - public
 #    - ./detox_node/bin/detox build -c android.emu.debug
 #    - ./detox_node/bin/detox test -c android.emu.debug
 #    - kill -9 $(lsof -n -i4TCP:2137)
+  only:
+    refs:
+      - develop
+
+build:android:release:
+  type: test
+  image: jangrewe/gitlab-ci-android:latest
+  before_script:
+    - export GRADLE_USER_HOME=`pwd`/.gradle
+    - mkdir -p $GRADLE_USER_HOME
+    - chmod +x ./android/gradlew
+  script:
+    - apt-get update -yq && apt-get install curl gnupg -yq && curl -sL https://deb.nodesource.com/setup_10.x | bash && apt-get install nodejs -yq
+    - node -v
+    - npm i -g detox-cli yarn
+    - yarn
+    - detox build -c android.ci.release
+    - mkdir public
+    - mv ./android/app/build/outputs/apk/release/app-release.apk ./public/app-release.apk
+  artifacts:
+    paths:
+      - public
+  only:
+    refs:
+      - master
+      - release
+      - hotfix
