@@ -30,7 +30,7 @@ build:android:
     - export GRADLE_USER_HOME=`pwd`/.gradle
     - mkdir -p $GRADLE_USER_HOME
     - chmod +x ./android/gradlew
-#   - echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf && sysctl -p
+    - echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf && sysctl -p
 #    - $ANDROID_HOME/tools/bin/sdkmanager --list
 #    - $ANDROID_HOME/tools/bin/sdkmanager "platform-tools" "emulator" "system-images;android-28;google_apis;x86_64"
 #    - touch ~/.android/repositories.cfg
@@ -67,6 +67,7 @@ build:android:release:
     - export GRADLE_USER_HOME=`pwd`/.gradle
     - mkdir -p $GRADLE_USER_HOME
     - chmod +x ./android/gradlew
+    - echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf && sysctl -p
   script:
     - apt-get update -yq && apt-get install curl gnupg -yq && curl -sL https://deb.nodesource.com/setup_10.x | bash && apt-get install nodejs -yq
     - node -v
