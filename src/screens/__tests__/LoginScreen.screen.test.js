@@ -1,9 +1,9 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import LoginScreen from '~screens/LoginScreen';
-import '~utils/__tests__/throwOnConsoleError';
-import '~utils/__tests__/mockNativeModules';
-import withStore from '~utils/__tests__/mockStore';
+import '~utils/tests/throwOnConsoleError';
+import '~utils/tests/mockNativeModules';
+import withStore from '~utils/tests/mockStore';
 
 jest.mock('react-navigation', () => ({ withNavigation: component => component }));
 const navigation = { navigate: jest.fn() };

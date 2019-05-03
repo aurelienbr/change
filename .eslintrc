@@ -11,7 +11,7 @@
     "prettier/standard",
     "plugin:jest/recommended"
   ],
-  "plugins": ["flowtype", "react", "react-native", "prettier", "standard", "jest"],
+  "plugins": ["flowtype", "react", "react-native", "prettier", "standard", "jest", "detox"],
   "rules": {
     "no-use-before-define": "off",
     "import/no-namespace": "off",
