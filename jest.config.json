@@ -1,0 +1,29 @@
+{
+  "preset": "react-native",
+  "collectCoverage": true,
+  "moduleDirectories": ["node_modules", "src"],
+  "testPathIgnorePatterns": ["/node_modules/", "/e2e/"],
+  "transform": {
+    "^.+\\.js$": "babel-jest"
+  },
+  "setupFiles": ["<rootDir>/jest/setup.js"],
+  "transformIgnorePatterns": ["node_modules/(?!(jest-)?react-native|react-native-gesture-handler|react-navigation-redux-helpers)"],
+  "coveragePathIgnorePatterns": ["/node_modules/", "/jest"],
+  "collectCoverageFrom": [
+    "**/src/**/*.{js,jsx}",
+    "!**/node_modules/**",
+    "!**/vendor/**",
+    "!**/src/redux/**",
+    "!**/src/screens/**",
+    "!**/src/lang/**",
+    "!**/src/libs/**",
+    "!**/src/constants/**",
+    "!**/src/utils/tests/**",
+    "!**/src/custom-service-worker.js",
+    "!**/src/serviceWorker.js",
+    "!**/src/index.js",
+    "!**/src/components/app/**",
+    "!**/src/navigations/**",
+    "!**/src/assets/**"
+  ]
+}

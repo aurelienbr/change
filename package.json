@@ -4,12 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest",
-    "test:screen": "node ./node_modules/jest/bin/jest.js --testPathPattern=screen\\.test\\.js$ --coverage",
-    "test:unit": "node ./node_modules/jest/bin/jest.js --testPathPattern=unit\\.test\\.js$ --coverage",
-    "test:int": "node ./node_modules/jest/bin/jest.js --testPathPattern=int\\.test\\.js$ --coverage",
-    "test:func": "node ./node_modules/jest/bin/jest.js --testPathPattern=func\\.test\\.js$ --coverage",
-    "precommit": "lint-staged && npm run flow",
+    "test": "jest -c jest.config.json",
+    "precommit": "lint-staged",
     "lint": "eslint src/**/*.js",
     "flow": "flow"
   },
@@ -19,26 +15,6 @@
       "src/assets/fonts/Montserrat-Light",
       "src/assets/fonts/Montserrat-Regular",
       "src/assets/fonts/SpaceMono-Regular"
-    ]
-  },
-  "jest": {
-    "preset": "react-native",
-    "transformIgnorePatterns": [
-      "node_modules/(?!(jest-)?react-native|react-native-gesture-handler|react-navigation-redux-helpers)"
-    ],
-    "verbose": true,
-    "transform": {
-      "^.+\\.js$": "babel-jest"
-    },
-    "globals": {
-      "NODE_ENV": "test"
-    },
-    "moduleFileExtensions": [
-      "js"
-    ],
-    "moduleDirectories": [
-      "node_modules",
-      "src"
     ]
   },
   "lint-staged": {
@@ -80,12 +56,15 @@
     "babel-jest": "^23.6.0",
     "babel-plugin-module-resolver": "^3.2.0",
     "babel-polyfill": "^6.26.0",
-    "enzyme-adapter-react-16": "^1.7.1",
+    "detox": "^12.6.1",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
     "eslint": "^5.10.0",
     "eslint-config-prettier": "^3.3.0",
     "eslint-config-react-native": "^4.0.0",
     "eslint-config-semistandard": "^13.0.0",
     "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-detox": "^1.0.0",
     "eslint-plugin-flowtype": "^3.2.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jest": "^22.1.2",
@@ -98,15 +77,34 @@
     "eslint-plugin-standard": "^4.0.0",
     "flow-bin": "0.91.0",
     "husky": "^1.2.1",
-    "jest": "^23.6.0",
+    "jest": "^24.7.1",
     "lint-staged": "^8.1.0",
     "metro-react-native-babel-preset": "0.51.1",
     "nock": "^10.0.4",
     "prettier": "^1.15.3",
     "prettier-eslint": "^8.8.2",
+    "react-dom": "^16.8.6",
     "react-test-renderer": "^16.6.3",
     "redux-test-utils": "^0.3.0",
     "regenerator-runtime": "^0.13.1",
-    "remote-redux-devtools": "0.5.0"
+    "remote-redux-devtools": "0.5.0",
+    "sinon": "^7.3.2"
+  },
+  "detox": {
+    "test-runner": "jest",
+    "configurations": {
+      "ios.sim.debug": {
+        "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/DetoxTest.app",
+        "build": "xcodebuild -project ios/DetoxTest.xcodeproj -scheme DetoxTest -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
+        "type": "ios.simulator",
+        "name": "iPhone 8"
+      },
+      "android.emu.debug": {
+        "binaryPath": "android/app/build/outputs/apk/debug/app-debug.apk",
+        "build": "cd android && gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug && cd ..",
+        "type": "android.emulator",
+        "name": "Nexus_5X_API_28_x86"
+      }
+    }
   }
 }

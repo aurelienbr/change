@@ -1,7 +1,7 @@
 //@flow
-import * as mockData from '~services/__tests__/mock-data';
+import * as mockData from '~utils/tests/services/mock-data';
 import { loginUser, refreshToken, registerUser } from '~services/authentication/authenticationService';
-import Mock from '~services/__tests__/feathers-mock';
+import Mock from '~utils/tests/services/feathers-mock';
 
 describe('sessionService', () => {
   describe('loginUser', () => {

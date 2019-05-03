@@ -1,19 +1,39 @@
 image: node:8.11.4
 
-before_script:
-  - yarn
-
 test:
   script:
-    - yarn run test:int
-    - yarn run test:unit
-    - yarn run test:screen
+    - yarn
+    - yarn run lint
+    - yarn run flow
+    - yarn run test
 
-build:
-  only:
-    - master
-    - release
-    - hotfix
-    - develop
-  script:
-    - yarn run test:func
+#detox_test:iOS:
+#  stage: test
+#  before_script:
+#    - brew tap wix/brew
+#    - brew install --HEAD applesimutils
+#    - npm install -g detox-cli
+#    - npm install -g react-native-cli
+#    - npm install
+#  script:
+#      - react-native start --port 2137 &
+#      - detox build -c ios.sim.debug
+#      - detox test -c ios.sim.debug
+#      - kill -9 $(lsof -n -i4TCP:2137)
+#  tags:
+#      - xcode-9.2
+
+#detox_test:android:
+#  type: test
+#  image: jerbob92/gitlab-ci-android:latest
+#  before_script:
+#    - export GRADLE_USER_HOME=`pwd`/.gradle
+#    - mkdir -p $GRADLE_USER_HOME
+#    - chmod +x ./gradlew
+#  script:
+#    - npm i -g detox-cli
+#    - nohup npm run start &
+#    - ./detox_node/bin/react-native start --port 2137 &
+#    - ./detox_node/bin/detox build -c android.emu.debug
+#    - ./detox_node/bin/detox test -c android.emu.debug
+#    - kill -9 $(lsof -n -i4TCP:2137)

@@ -32,7 +32,7 @@ class LoginScreen extends PureComponent<Props, State> {
     const { form } = this.state;
 
     return (
-      <ImageBackground source={BG_IMAGE} style={styles.bgImage}>
+      <ImageBackground source={BG_IMAGE} style={styles.bgImage} testID={'login'}>
         <ScrollView scrollEnabled={false} keyboardShouldPersistTaps="handled" contentContainerStyle={styles.container}>
           <KeyboardAvoidingView behavior="position" contentContainerStyle={styles.formContainer}>
             <View style={styles.formView}>
