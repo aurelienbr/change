@@ -5,6 +5,9 @@ import { IntlProvider } from 'react-intl';
 import messages from '~lang/index';
 import AppNavigator from '~navigation/AppNavigator';
 
+import { connect } from 'react-redux';
+import type { StateType } from '~types/Actions';
+
 export type StateProps = {
   language: string
 };
@@ -25,4 +28,8 @@ class App extends PureComponent<Props> {
   }
 }
 
-export default App;
+export default connect(
+  (state: StateType): StateProps => ({
+    language: state.locale.language
+  })
+)(App);

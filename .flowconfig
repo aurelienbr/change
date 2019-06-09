@@ -86,4 +86,4 @@ module.name_mapper='^~utils\/\(.*\)$' -> '<PROJECT_ROOT>/src/utils/\1'
 module.name_mapper='^~src\/\(.*\)$' -> '<PROJECT_ROOT>/src/\1'
 
 [version]
-^0.91.0
+^0.93.0
