@@ -32,7 +32,7 @@
     "@feathersjs/authentication-client": "^1.0.9",
     "@feathersjs/feathers": "^3.3.0",
     "@feathersjs/rest-client": "^1.4.6",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "eslint-import-resolver-babel-module": "^5.0.1",
     "intl": "^1.2.5",
     "react": "16.6.3",
